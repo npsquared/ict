@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="assignmentModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="assignmentModelStoreContainer">
+          <EntitySet Name="ict_Course" EntityType="assignmentModel.Store.ict_Course" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ict_Degree" EntityType="assignmentModel.Store.ict_Degree" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ict_DegreeCourse" EntityType="assignmentModel.Store.ict_DegreeCourse" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ict_Diploma" EntityType="assignmentModel.Store.ict_Diploma" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ict_DiplomaCourse" EntityType="assignmentModel.Store.ict_DiplomaCourse" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ict_Feedback" EntityType="assignmentModel.Store.ict_Feedback" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ict_Graduate" EntityType="assignmentModel.Store.ict_Graduate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ict_GraduateCourse" EntityType="assignmentModel.Store.ict_GraduateCourse" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ict_Job" EntityType="assignmentModel.Store.ict_Job" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ict_Page" EntityType="assignmentModel.Store.ict_Page" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ict_Program" EntityType="assignmentModel.Store.ict_Program" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ict_ProgramOverview" EntityType="assignmentModel.Store.ict_ProgramOverview" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ict_Staff" EntityType="assignmentModel.Store.ict_Staff" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ict_Student" EntityType="assignmentModel.Store.ict_Student" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="ict_Course">
+          <Key>
+            <PropertyRef Name="courseID" />
+          </Key>
+          <Property Name="courseID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="courseName" Type="nvarchar(max)" />
+          <Property Name="courseCode" Type="nvarchar(max)" />
+          <Property Name="courseDescription" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ict_Degree">
+          <Key>
+            <PropertyRef Name="degreeID" />
+          </Key>
+          <Property Name="degreeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="degreeName" Type="nvarchar(max)" />
+          <Property Name="degreeDuration" Type="nvarchar(max)" />
+          <Property Name="degreeDescription" Type="nvarchar(max)" />
+          <Property Name="degreeCode" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ict_DegreeCourse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="URLOutline" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ict_Diploma">
+          <Key>
+            <PropertyRef Name="diplomaID" />
+          </Key>
+          <Property Name="diplomaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="diplomaName" Type="nvarchar(max)" />
+          <Property Name="diplomaDuration" Type="nvarchar(max)" />
+          <Property Name="diplomaDescription" Type="nvarchar(max)" />
+          <Property Name="diplomaCode" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ict_DiplomaCourse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="URLOutline" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ict_Feedback">
+          <Key>
+            <PropertyRef Name="feedbackID" />
+          </Key>
+          <Property Name="feedbackID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="feedback" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ict_Graduate">
+          <Key>
+            <PropertyRef Name="graduateID" />
+          </Key>
+          <Property Name="graduateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="graduateName" Type="nvarchar(max)" />
+          <Property Name="graduateDuration" Type="nvarchar(max)" />
+          <Property Name="graduateDescription" Type="nvarchar(max)" />
+          <Property Name="graduateCode" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ict_GraduateCourse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="URLOutline" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ict_Job">
+          <Key>
+            <PropertyRef Name="jobID" />
+          </Key>
+          <Property Name="jobID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="jobDescription" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ict_Page">
+          <Key>
+            <PropertyRef Name="PageID" />
+          </Key>
+          <Property Name="PageID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="DateModified" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ict_Program">
+          <Key>
+            <PropertyRef Name="programID" />
+          </Key>
+          <Property Name="programID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="porgramName" Type="nvarchar(max)" />
+          <Property Name="programCode" Type="nvarchar(max)" />
+          <Property Name="programType" Type="nvarchar(max)" />
+          <Property Name="programDuration" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ict_ProgramOverview">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProgramName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProgramCode" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProgramDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProgramDuration" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProgramCredential" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ict_Staff">
+          <Key>
+            <PropertyRef Name="staffID" />
+          </Key>
+          <Property Name="staffID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="lastName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="responsibility" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="extention" Type="nvarchar(max)" />
+          <Property Name="office" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="website" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ict_Student">
+          <Key>
+            <PropertyRef Name="studentID" />
+          </Key>
+          <Property Name="studentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="lastName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="programName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="semester" Type="nvarchar(max)" />
+          <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="assignmentModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="assignmentEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ict_Course" EntityType="assignmentModel.ict_Course" />
+          <EntitySet Name="ict_Degree" EntityType="assignmentModel.ict_Degree" />
+          <EntitySet Name="ict_Diploma" EntityType="assignmentModel.ict_Diploma" />
+          <EntitySet Name="ict_Feedback" EntityType="assignmentModel.ict_Feedback" />
+          <EntitySet Name="ict_Graduate" EntityType="assignmentModel.ict_Graduate" />
+          <EntitySet Name="ict_Job" EntityType="assignmentModel.ict_Job" />
+          <EntitySet Name="ict_Program" EntityType="assignmentModel.ict_Program" />
+          <EntitySet Name="ict_Staff" EntityType="assignmentModel.ict_Staff" />
+          <EntitySet Name="ict_Student" EntityType="assignmentModel.ict_Student" />
+          <EntitySet Name="ict_ProgramOverview" EntityType="assignmentModel.ict_ProgramOverview" />
+          <EntitySet Name="ict_DegreeCourse" EntityType="assignmentModel.ict_DegreeCourse" />
+          <EntitySet Name="ict_DiplomaCourse" EntityType="assignmentModel.ict_DiplomaCourse" />
+          <EntitySet Name="ict_GraduateCourse" EntityType="assignmentModel.ict_GraduateCourse" />
+          <EntitySet Name="ict_Page" EntityType="assignmentModel.ict_Page" />
+        </EntityContainer>
+        <EntityType Name="ict_Course">
+          <Key>
+            <PropertyRef Name="courseID" />
+          </Key>
+          <Property Name="courseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="courseName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="courseCode" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="courseDescription" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ict_Degree">
+          <Key>
+            <PropertyRef Name="degreeID" />
+          </Key>
+          <Property Name="degreeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="degreeName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="degreeDuration" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="degreeDescription" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="degreeCode" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ict_Diploma">
+          <Key>
+            <PropertyRef Name="diplomaID" />
+          </Key>
+          <Property Name="diplomaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="diplomaName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="diplomaDuration" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="diplomaDescription" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="diplomaCode" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ict_Feedback">
+          <Key>
+            <PropertyRef Name="feedbackID" />
+          </Key>
+          <Property Name="feedbackID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="feedback" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ict_Graduate">
+          <Key>
+            <PropertyRef Name="graduateID" />
+          </Key>
+          <Property Name="graduateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="graduateName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="graduateDuration" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="graduateDescription" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="graduateCode" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ict_Job">
+          <Key>
+            <PropertyRef Name="jobID" />
+          </Key>
+          <Property Name="jobID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jobDescription" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ict_Program">
+          <Key>
+            <PropertyRef Name="programID" />
+          </Key>
+          <Property Name="programID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="porgramName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="programCode" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="programType" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="programDuration" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ict_Staff">
+          <Key>
+            <PropertyRef Name="staffID" />
+          </Key>
+          <Property Name="staffID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="lastName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="responsibility" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="extention" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="office" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="website" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ict_Student">
+          <Key>
+            <PropertyRef Name="studentID" />
+          </Key>
+          <Property Name="studentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="lastName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="programName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="semester" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ict_ProgramOverview">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ProgramName" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProgramCode" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProgramDescription" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProgramDuration" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProgramCredential" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ict_DegreeCourse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="URLOutline" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ict_DiplomaCourse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="URLOutline" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ict_GraduateCourse">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="URLOutline" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ict_Page">
+          <Key>
+            <PropertyRef Name="PageID" />
+          </Key>
+          <Property Type="Int32" Name="PageID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DateCreated" />
+          <Property Type="DateTime" Name="DateModified" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="assignmentModelStoreContainer" CdmEntityContainer="assignmentEntities">
+          <EntitySetMapping Name="ict_Course"><EntityTypeMapping TypeName="assignmentModel.ict_Course"><MappingFragment StoreEntitySet="ict_Course">
+            <ScalarProperty Name="courseID" ColumnName="courseID" />
+            <ScalarProperty Name="courseName" ColumnName="courseName" />
+            <ScalarProperty Name="courseCode" ColumnName="courseCode" />
+            <ScalarProperty Name="courseDescription" ColumnName="courseDescription" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ict_Degree"><EntityTypeMapping TypeName="assignmentModel.ict_Degree"><MappingFragment StoreEntitySet="ict_Degree">
+            <ScalarProperty Name="degreeID" ColumnName="degreeID" />
+            <ScalarProperty Name="degreeName" ColumnName="degreeName" />
+            <ScalarProperty Name="degreeDuration" ColumnName="degreeDuration" />
+            <ScalarProperty Name="degreeDescription" ColumnName="degreeDescription" />
+            <ScalarProperty Name="degreeCode" ColumnName="degreeCode" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ict_Diploma"><EntityTypeMapping TypeName="assignmentModel.ict_Diploma"><MappingFragment StoreEntitySet="ict_Diploma">
+            <ScalarProperty Name="diplomaID" ColumnName="diplomaID" />
+            <ScalarProperty Name="diplomaName" ColumnName="diplomaName" />
+            <ScalarProperty Name="diplomaDuration" ColumnName="diplomaDuration" />
+            <ScalarProperty Name="diplomaDescription" ColumnName="diplomaDescription" />
+            <ScalarProperty Name="diplomaCode" ColumnName="diplomaCode" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ict_Feedback"><EntityTypeMapping TypeName="assignmentModel.ict_Feedback"><MappingFragment StoreEntitySet="ict_Feedback">
+            <ScalarProperty Name="feedbackID" ColumnName="feedbackID" />
+            <ScalarProperty Name="feedback" ColumnName="feedback" />
+            <ScalarProperty Name="date" ColumnName="date" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ict_Graduate"><EntityTypeMapping TypeName="assignmentModel.ict_Graduate"><MappingFragment StoreEntitySet="ict_Graduate">
+            <ScalarProperty Name="graduateID" ColumnName="graduateID" />
+            <ScalarProperty Name="graduateName" ColumnName="graduateName" />
+            <ScalarProperty Name="graduateDuration" ColumnName="graduateDuration" />
+            <ScalarProperty Name="graduateDescription" ColumnName="graduateDescription" />
+            <ScalarProperty Name="graduateCode" ColumnName="graduateCode" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ict_Job"><EntityTypeMapping TypeName="assignmentModel.ict_Job"><MappingFragment StoreEntitySet="ict_Job">
+            <ScalarProperty Name="jobID" ColumnName="jobID" />
+            <ScalarProperty Name="jobDescription" ColumnName="jobDescription" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ict_Program"><EntityTypeMapping TypeName="assignmentModel.ict_Program"><MappingFragment StoreEntitySet="ict_Program">
+            <ScalarProperty Name="programID" ColumnName="programID" />
+            <ScalarProperty Name="porgramName" ColumnName="porgramName" />
+            <ScalarProperty Name="programCode" ColumnName="programCode" />
+            <ScalarProperty Name="programType" ColumnName="programType" />
+            <ScalarProperty Name="programDuration" ColumnName="programDuration" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ict_Staff"><EntityTypeMapping TypeName="assignmentModel.ict_Staff"><MappingFragment StoreEntitySet="ict_Staff">
+            <ScalarProperty Name="staffID" ColumnName="staffID" />
+            <ScalarProperty Name="firstName" ColumnName="firstName" />
+            <ScalarProperty Name="lastName" ColumnName="lastName" />
+            <ScalarProperty Name="responsibility" ColumnName="responsibility" />
+            <ScalarProperty Name="email" ColumnName="email" />
+            <ScalarProperty Name="extention" ColumnName="extention" />
+            <ScalarProperty Name="office" ColumnName="office" />
+            <ScalarProperty Name="website" ColumnName="website" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ict_Student"><EntityTypeMapping TypeName="assignmentModel.ict_Student"><MappingFragment StoreEntitySet="ict_Student">
+            <ScalarProperty Name="studentID" ColumnName="studentID" />
+            <ScalarProperty Name="firstName" ColumnName="firstName" />
+            <ScalarProperty Name="lastName" ColumnName="lastName" />
+            <ScalarProperty Name="programName" ColumnName="programName" />
+            <ScalarProperty Name="semester" ColumnName="semester" />
+            <ScalarProperty Name="email" ColumnName="email" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ict_ProgramOverview">
+            <EntityTypeMapping TypeName="assignmentModel.ict_ProgramOverview">
+              <MappingFragment StoreEntitySet="ict_ProgramOverview">
+                <ScalarProperty Name="ProgramCredential" ColumnName="ProgramCredential" />
+                <ScalarProperty Name="ProgramDuration" ColumnName="ProgramDuration" />
+                <ScalarProperty Name="ProgramDescription" ColumnName="ProgramDescription" />
+                <ScalarProperty Name="ProgramCode" ColumnName="ProgramCode" />
+                <ScalarProperty Name="ProgramName" ColumnName="ProgramName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ict_DegreeCourse">
+            <EntityTypeMapping TypeName="assignmentModel.ict_DegreeCourse">
+              <MappingFragment StoreEntitySet="ict_DegreeCourse">
+                <ScalarProperty Name="URLOutline" ColumnName="URLOutline" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ict_DiplomaCourse">
+            <EntityTypeMapping TypeName="assignmentModel.ict_DiplomaCourse">
+              <MappingFragment StoreEntitySet="ict_DiplomaCourse">
+                <ScalarProperty Name="URLOutline" ColumnName="URLOutline" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ict_GraduateCourse">
+            <EntityTypeMapping TypeName="assignmentModel.ict_GraduateCourse">
+              <MappingFragment StoreEntitySet="ict_GraduateCourse">
+                <ScalarProperty Name="URLOutline" ColumnName="URLOutline" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ict_Page">
+            <EntityTypeMapping TypeName="assignmentModel.ict_Page">
+              <MappingFragment StoreEntitySet="ict_Page">
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="PageID" ColumnName="PageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model">
+        <EntityTypeShape EntityType="assignmentModel.ict_Course" Width="1.5" PointX="0.75" PointY="0.75" Height="1.787985026041667" IsExpanded="true" />
+        <EntityTypeShape EntityType="assignmentModel.ict_Degree" Width="1.5" PointX="2.75" PointY="0.75" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="assignmentModel.ict_Diploma" Width="1.5" PointX="0.75" PointY="3.75" Height="1.9802864583333322" IsExpanded="true" />
+        <EntityTypeShape EntityType="assignmentModel.ict_Feedback" Width="1.5" PointX="2.75" PointY="3.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="assignmentModel.ict_Graduate" Width="1.5" PointX="4.75" PointY="0.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="assignmentModel.ict_Job" Width="1.5" PointX="4.75" PointY="3.75" Height="1.4033821614583322" IsExpanded="true" />
+        <EntityTypeShape EntityType="assignmentModel.ict_Program" Width="1.5" PointX="6.75" PointY="0.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="assignmentModel.ict_Staff" Width="1.5" PointX="2.75" PointY="6.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="assignmentModel.ict_Student" Width="1.5" PointX="6.75" PointY="3.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="assignmentModel.ict_ProgramOverview" Width="1.5" PointX="5.375" PointY="6.75" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="assignmentModel.ict_DegreeCourse" Width="1.5" PointX="7.375" PointY="6.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="assignmentModel.ict_DiplomaCourse" Width="1.5" PointX="9.375" PointY="0.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="assignmentModel.ict_GraduateCourse" Width="1.5" PointX="9.375" PointY="3.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="assignmentModel.ict_Page" Width="1.5" PointX="5.375" PointY="9.75" Height="1.9802864583333388" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

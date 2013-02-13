@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="Default.aspx" title="Home" description="Home" roles="*">
+    <siteMapNode title="School of ICT" description="School of ICT" url="" roles="*">
+      <siteMapNode url="www.senecac.on.ca"
+       title="Seneca Homepage"
+       description="Seneca" roles="*" />
+      <siteMapNode
+        title="Staff List"
+        description="Staff List" url="author/stafflist.aspx" roles="*" />
+      <siteMapNode
+        title="Student List"
+        description="Student List" url="author/studentlist.aspx" roles="*" />
+      <siteMapNode title="Clubs" description="Clubs" url="author/clubs.aspx" roles="*"  />
+      <siteMapNode title="Academic Policy" description="Academic Policy" url ="AcademicPolicy.aspx" roles="*"/>
+      
+
+
+    </siteMapNode>
+
+
+
+    <siteMapNode title="Programs"
+       url=""
+       description="Programs" roles="*">
+      <siteMapNode title="Overview" description="Overview" url="Overview.aspx" roles="*" />
+      <siteMapNode title="Courses" description="Courses" url="Courses.aspx" roles="*" />
+      <siteMapNode title="Diploma Programs" description="Diploma Programs" url="Diploma.aspx" roles="*" />
+      <siteMapNode title="Bachelor's Degrees" description="Bachelor's Degrees" url="Degree.aspx" roles="*" />
+      <siteMapNode title="Graduate Certificates" description="Graduate Certificates" url="Graduate.aspx" roles="*" />
+
+    </siteMapNode>
+
+    <siteMapNode title="Resources" description="Resources" roles="*">
+      <siteMapNode title="Academic Computing Systems" description="Academic Computing Systems" roles="*" />
+      <siteMapNode title="ITS Service Desk" description="ITS Service Desk" roles="*" />
+      <siteMapNode title="Career" description="Career" roles="*"/>
+      <siteMapNode title="Co-op Education" description="Co-op Education" role="*" />
+     
+      <siteMapNode title="First Semester Guide" description="Guide" roles="*"/>
+      <siteMapNode title="Admissions and Fees" description="Admissions and Fees" roles="*" />
+    
+    </siteMapNode>
+
+    <siteMapNode title="Contact Us" description="Contact Us" url="ContactUs.aspx" roles="*">
+
+    </siteMapNode>
+
+    <siteMapNode title="Author's Area" description="author" url="author/editablepage.aspx" roles="*" ></siteMapNode>
+    
+  </siteMapNode>
+
+
+</siteMap>

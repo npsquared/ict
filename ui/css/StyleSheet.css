@@ -1,0 +1,26 @@
+﻿body {    height: 143px;
+    width: 1580px;
+}
+            #head
+        {
+            text-align: center;
+           background-color: #800000;
+           
+            
+        }
+        .style1
+        {
+            font-size: xx-large;
+            font-family: "Broadway BT";
+        }
+        #foot
+        {
+            background-color: #990000;
+        }
+        .style2
+        {
+            color: #FFFFFF;
+        }
+        
+       
+       

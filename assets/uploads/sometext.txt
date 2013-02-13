@@ -1,0 +1,4 @@
+Business Rules:
+•	Only credit cards can be used as payment
+•	Cancellations made within 24 hours of booking attract no cancellation fee.
+•	Cancellations made after 24 hours of booking attract a cancellation fee.

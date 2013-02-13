@@ -1,0 +1,206 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Master.master.cs" Inherits="Master" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+   
+    <link href="../css/StyleSheet.css" rel="stylesheet" type="text/css" />
+   
+    <style type="text/css">
+        #sitemap
+        {
+            height: 29px;
+            width: 1579px;
+        }
+        .style4
+        {
+            font-size: xx-large;
+            font-family: "Broadway BT";
+            color: #FFFFFF;
+        }
+        .style5
+        {
+            width: 1081px;
+            height: 105px;
+        }
+        .style8
+        {
+            width: 169px;
+            height: 25px;
+        }
+        .style11
+        {
+            width: 91px;
+            height: 25px;
+        }
+        .style15
+        {
+            width: 128px;
+            height: 25px;
+        }
+        .style16
+        {
+            height: 25px;
+        }
+    </style>
+   
+</head>
+<body style="width:100%; position:relative">
+    <form id="form1" runat="server">
+    
+    <div id="buttons">
+    
+    
+    
+    
+        <table cellpadding="5" cellspacing="5" class="style5">
+            <tr>
+                <td class="style11">
+                    <asp:Button ID="studentbutton" runat="server" onclick="studentbutton_Click" 
+                        Text="Student" Width="90px" />
+                </td>
+                <td class="style15">
+                    <asp:Button ID="staffbutton" runat="server" onclick="staffbutton_Click" 
+                        Text="Staff" Width="94px" />
+                </td>
+                <td class="style8">
+                    <asp:Button ID="communitybutton" runat="server" onclick="communitybutton_Click" 
+                        Text="Public" Width="97px" />
+                </td>
+                <td class="style16">
+                    <asp:LoginView ID="LoginView2" runat="server">
+    <AnonymousTemplate>
+    
+    
+  
+    
+    
+        <asp:Login ID="Login2" runat="server" 
+            TitleText="" Orientation="Horizontal" RenderOuterTable="False">
+            <LayoutTemplate>
+                
+                                        <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">User Name:</asp:Label>
+                                    
+                                        <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" 
+                                            ControlToValidate="UserName" ErrorMessage="User Name is required." 
+                                            ToolTip="User Name is required." ValidationGroup="ctl00$ctl00$Login2">*</asp:RequiredFieldValidator>
+                                    
+                                        <asp:Label ID="PasswordLabel" runat="server" AssociatedControlID="Password">Password:</asp:Label>
+                                    
+                                        <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" 
+                                            ControlToValidate="Password" ErrorMessage="Password is required." 
+                                            ToolTip="Password is required." ValidationGroup="ctl00$ctl00$Login2">*</asp:RequiredFieldValidator>
+                                   
+                                        <asp:CheckBox ID="RememberMe" runat="server" Text="Remember me" />
+                                   
+                                        <asp:ImageButton ID="LoginButton" runat="server" CommandName="Login" Text="Log In" ImageUrl="~/assets/images/login.jpg"
+                                            ValidationGroup="ctl00$ctl00$Login2" />
+               
+                                    <td colspan="6" style="color:Red;">
+                                        <asp:Literal ID="FailureText" runat="server" EnableViewState="False"></asp:Literal>
+                                  
+                       
+            </LayoutTemplate>
+        </asp:Login>
+    
+    
+    </AnonymousTemplate>
+
+    <LoggedInTemplate>
+     <asp:LoginName ID="LoginName1" runat="server" />
+    
+        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+    
+    </LoggedInTemplate>
+
+    </asp:LoginView>
+                </td>
+            </tr>
+        </table>
+    
+    
+    
+    
+    </div>
+
+
+    <div id="head"
+        
+        
+        
+        
+        
+        style="border: thin solid #000000; background-image: url('/bti420_121a41/assets/images/Blue_Smoke.jpg'); position: relative;">
+    
+    
+    
+        <asp:HyperLink ID="homelink" runat="server" 
+            ImageUrl="~/assets/images/ICT_Logo.png" NavigateUrl="~/Default.aspx" 
+            Target="_self">ICT HomePage</asp:HyperLink>
+        <br />
+        <span class="style4" style="margin: 15px; padding: 15px; position: relative">Welcome to the ICT website!</span></div>
+
+       <div id="sitemap" 
+    style="background-color: #000000; width: 100%; height: inherit;">
+        
+            
+        
+        
+        <asp:Menu ID="Menu1" runat="server" DynamicHorizontalOffset="10"
+        RenderingMode="List" StaticEnableDefaultPopOutImage="False" 
+        DataSourceID="SiteMapDataSource1" StaticDisplayLevels="2" Orientation="Horizontal">
+        <DynamicHoverStyle BackColor="#CC6633" />
+        <DynamicMenuItemStyle BackColor="#990000" Height="25px" HorizontalPadding="2px" VerticalPadding="2px"
+            Width="180px" />
+        <DynamicSelectedStyle BackColor="#66FFFF" />
+        <StaticHoverStyle BackColor="#CC6633" />
+        <StaticMenuItemStyle BackColor="#990000" Height="25px" HorizontalPadding="2px" VerticalPadding="2px"
+            Width="200px" />
+        <StaticSelectedStyle BackColor="#990000" />
+    </asp:Menu>
+        
+           <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="True" SiteMapProvider="publicProvider" />
+        
+          <asp:SiteMapDataSource ID="SiteMapDataSource2" runat="server" ShowStartingNode="True" SiteMapProvider="studentProvider" />
+           <asp:SiteMapDataSource ID="SiteMapDataSource3" runat="server" ShowStartingNode="True" SiteMapProvider="staffProvider" />
+        
+        </div>
+
+    <div align="center">
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+           
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <div id="foot" 
+        
+        
+            
+        
+        
+        style="border: thin solid #000000; background-image: url('/bti420_121a41/assets/images/Blue_Smoke.jpg'); position: relative; ">
+    
+    
+    
+        <span class="style2">Seneca @York Campus | 70 The Pond Road | Toronto | Ontario 
+        | M3J 3M6</span><br />
+        <asp:HyperLink ID="contactlink" runat="server" NavigateUrl="~/ContactUs.aspx" 
+            Target="_self" style="color: #FFFFFF">Questions? Feel free to contact us!</asp:HyperLink>
+    
+    
+    
+    </div>
+    
+
+    </form>
+</body>
+</html>
